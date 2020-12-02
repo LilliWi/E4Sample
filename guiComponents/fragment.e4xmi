@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_sFsrkCv8Eeuv3bdxGBKM4A">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_sFsrkCv8Eeuv3bdxGBKM4A">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_EuMSAC5zEeu0_sz9uE4nKA" featurename="commands" parentElementId="xpath:/">
     <elements xsi:type="commands:Command" xmi:id="_HPpiIC5zEeu0_sz9uE4nKA" elementId="guicomponents.command.e4dialog" commandName="e4Dialog"/>
     <elements xsi:type="commands:Command" xmi:id="_6U6KoDCOEeu5B4x-iNiZqg" elementId="guicomponents.command.e3dialog" commandName="e3Dialog"/>
@@ -34,5 +34,8 @@
     <elements xsi:type="basic:PartDescriptor" xmi:id="_Zx1MAC8EEeums_H9wZhvrw" elementId="guicomponents.partdescriptor.part" label="E4 View" iconURI="platform:/plugin/guiComponents/icons/sample.png" category="MyView Category" contributionURI="bundleclass://guiComponents/views.E4View">
       <tags>View</tags>
     </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_cnSL0DQKEeuErYSXqptzlQ" featurename="addons" parentElementId="xpath:/">
+    <elements xsi:type="application:Addon" xmi:id="_eAUbUDQKEeuErYSXqptzlQ" elementId="guicomponents.addon.showViewByStartup" contributionURI="bundleclass://guiComponents/other.ViewStartupAddon"/>
   </fragments>
 </fragment:ModelFragments>
