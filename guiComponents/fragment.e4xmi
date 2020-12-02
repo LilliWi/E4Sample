@@ -6,6 +6,7 @@
     <elements xsi:type="commands:Command" xmi:id="_98c5EDCOEeu5B4x-iNiZqg" elementId="guicomponents.command.migrateddialog" commandName="migratedDialog"/>
     <elements xsi:type="commands:Command" xmi:id="_TYmwQDCdEeu5B4x-iNiZqg" elementId="guicomponents.command.addmenuentry" commandName="addMenuEntry"/>
     <elements xsi:type="commands:Command" xmi:id="_pVPBoDL4EeuyJ4UUgpsjeQ" elementId="guicomponents.command.showview" commandName="showView"/>
+    <elements xsi:type="commands:Command" xmi:id="_GsGAgDQCEeuErYSXqptzlQ" elementId="guicomponents.command.showviewinnewpartstack" commandName="showViewInNewPartStack"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_LM4MsC5zEeu0_sz9uE4nKA" featurename="handlers" parentElementId="xpath:/">
     <elements xsi:type="commands:Handler" xmi:id="_M_TzoC5zEeu0_sz9uE4nKA" elementId="guicomponents.handler.e4" contributionURI="bundleclass://guiComponents/handler.E4Handler" command="_HPpiIC5zEeu0_sz9uE4nKA"/>
@@ -13,6 +14,7 @@
     <elements xsi:type="commands:Handler" xmi:id="_DdKvoDCPEeu5B4x-iNiZqg" elementId="guicomponents.handler.migrated" contributionURI="bundleclass://guiComponents/handler.MigratedE4Handler" command="_98c5EDCOEeu5B4x-iNiZqg"/>
     <elements xsi:type="commands:Handler" xmi:id="_VGspwDCdEeu5B4x-iNiZqg" elementId="guicomponents.handler.createMenuEntry" contributionURI="bundleclass://guiComponents/handler.CreateMenuEntry" command="_TYmwQDCdEeu5B4x-iNiZqg"/>
     <elements xsi:type="commands:Handler" xmi:id="_rFVtUDL4EeuyJ4UUgpsjeQ" elementId="guicomponents.handler.0" contributionURI="bundleclass://guiComponents/handler.ShowViewHandler" command="_pVPBoDL4EeuyJ4UUgpsjeQ"/>
+    <elements xsi:type="commands:Handler" xmi:id="_I5vj0DQCEeuErYSXqptzlQ" elementId="guicomponents.handler.1" contributionURI="bundleclass://guiComponents/handler.ShowViewInNewPartStack" command="_GsGAgDQCEeuErYSXqptzlQ"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_GpPXgC51Eeu0_sz9uE4nKA" featurename="menuContributions" parentElementId="xpath:/">
     <elements xsi:type="menu:MenuContribution" xmi:id="_JICVMC51Eeu0_sz9uE4nKA" elementId="guicomponents.menucontribution.0" parentId="org.eclipse.ui.main.menu">
@@ -21,6 +23,7 @@
         <children xsi:type="menu:HandledMenuItem" xmi:id="_7PGWcDCYEeu5B4x-iNiZqg" elementId="guicomponents.handledmenuitem.e4Dialog" label="Migrated E4 With DI" command="_98c5EDCOEeu5B4x-iNiZqg"/>
         <children xsi:type="menu:MenuSeparator" xmi:id="_kz_rEDL4EeuyJ4UUgpsjeQ" elementId="guicomponents.menuseparator.1"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_LoQYgDQCEeuErYSXqptzlQ" elementId="guicomponents.handledmenuitem.openmyview" label="Open my view" command="_pVPBoDL4EeuyJ4UUgpsjeQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_iOLfYDL4EeuyJ4UUgpsjeQ" elementId="guicomponents.handledmenuitem.openmyview" label="Open my view in new part stack" command="_GsGAgDQCEeuErYSXqptzlQ"/>
         <children xsi:type="menu:MenuSeparator" xmi:id="_Tn88MDCPEeu5B4x-iNiZqg" elementId="guicomponents.menuseparator.0"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_Sf5H8DCPEeu5B4x-iNiZqg" elementId="guicomponents.handledmenuitem.e3" label="E3" command="_6U6KoDCOEeu5B4x-iNiZqg"/>
       </children>
