@@ -5,23 +5,27 @@
     <elements xsi:type="commands:Command" xmi:id="_6U6KoDCOEeu5B4x-iNiZqg" elementId="guicomponents.command.e3dialog" commandName="e3Dialog"/>
     <elements xsi:type="commands:Command" xmi:id="_98c5EDCOEeu5B4x-iNiZqg" elementId="guicomponents.command.migrateddialog" commandName="migratedDialog"/>
     <elements xsi:type="commands:Command" xmi:id="_TYmwQDCdEeu5B4x-iNiZqg" elementId="guicomponents.command.addmenuentry" commandName="addMenuEntry"/>
+    <elements xsi:type="commands:Command" xmi:id="_pVPBoDL4EeuyJ4UUgpsjeQ" elementId="guicomponents.command.showview" commandName="showView"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_LM4MsC5zEeu0_sz9uE4nKA" featurename="handlers" parentElementId="xpath:/">
     <elements xsi:type="commands:Handler" xmi:id="_M_TzoC5zEeu0_sz9uE4nKA" elementId="guicomponents.handler.e4" contributionURI="bundleclass://guiComponents/handler.E4Handler" command="_HPpiIC5zEeu0_sz9uE4nKA"/>
     <elements xsi:type="commands:Handler" xmi:id="_DYENMDCPEeu5B4x-iNiZqg" elementId="guicomponents.handler.e3" contributionURI="bundleclass://guiComponents/handler.E3Handler" command="_6U6KoDCOEeu5B4x-iNiZqg"/>
     <elements xsi:type="commands:Handler" xmi:id="_DdKvoDCPEeu5B4x-iNiZqg" elementId="guicomponents.handler.migrated" contributionURI="bundleclass://guiComponents/handler.MigratedE4Handler" command="_98c5EDCOEeu5B4x-iNiZqg"/>
     <elements xsi:type="commands:Handler" xmi:id="_VGspwDCdEeu5B4x-iNiZqg" elementId="guicomponents.handler.createMenuEntry" contributionURI="bundleclass://guiComponents/handler.CreateMenuEntry" command="_TYmwQDCdEeu5B4x-iNiZqg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_rFVtUDL4EeuyJ4UUgpsjeQ" elementId="guicomponents.handler.0" contributionURI="bundleclass://guiComponents/handler.ShowViewHandler" command="_pVPBoDL4EeuyJ4UUgpsjeQ"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_GpPXgC51Eeu0_sz9uE4nKA" featurename="menuContributions" parentElementId="xpath:/">
     <elements xsi:type="menu:MenuContribution" xmi:id="_JICVMC51Eeu0_sz9uE4nKA" elementId="guicomponents.menucontribution.0" parentId="org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_OdAOwC51Eeu0_sz9uE4nKA" elementId="guicomponents.menu.handler" label="Handler">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_QXb7IC51Eeu0_sz9uE4nKA" elementId="guicomponents.handledmenuitem.e4Dialog" label="E4" command="_HPpiIC5zEeu0_sz9uE4nKA"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_7PGWcDCYEeu5B4x-iNiZqg" elementId="guicomponents.handledmenuitem.e4Dialog" label="Migrated E4 With DI" command="_98c5EDCOEeu5B4x-iNiZqg"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_21x2sDChEeu5B4x-iNiZqg" elementId="guicomponents.handledmenuitem.addentrytodynamicmenu" label="Add Entry to Dynamic Menu" command="_TYmwQDCdEeu5B4x-iNiZqg"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_kz_rEDL4EeuyJ4UUgpsjeQ" elementId="guicomponents.menuseparator.1"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_LoQYgDQCEeuErYSXqptzlQ" elementId="guicomponents.handledmenuitem.openmyview" label="Open my view" command="_pVPBoDL4EeuyJ4UUgpsjeQ"/>
         <children xsi:type="menu:MenuSeparator" xmi:id="_Tn88MDCPEeu5B4x-iNiZqg" elementId="guicomponents.menuseparator.0"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_Sf5H8DCPEeu5B4x-iNiZqg" elementId="guicomponents.handledmenuitem.e3" label="E3" command="_6U6KoDCOEeu5B4x-iNiZqg"/>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_jHmjQDCeEeu5B4x-iNiZqg" elementId="guicomponents.menu.dynamicmenu" label="Dynamic Menu">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_21x2sDChEeu5B4x-iNiZqg" elementId="guicomponents.handledmenuitem.addentrytodynamicmenu" label="Add Entry to Dynamic Menu" command="_TYmwQDCdEeu5B4x-iNiZqg"/>
         <children xsi:type="menu:DirectMenuItem" xmi:id="_fLmvUDDAEeu5B4x-iNiZqg" elementId="guicomponents.directmenuitem.first" label="Check Item" type="Check" contributionURI="bundleclass://guiComponents/handler.TestDynamicClass"/>
       </children>
     </elements>
