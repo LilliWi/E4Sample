@@ -1,56 +1,59 @@
 package other;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
-import org.eclipse.e4.core.di.annotations.Optional;
-import org.eclipse.e4.ui.di.UIEventTopic;
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.model.application.MApplication;
-import org.eclipse.e4.ui.model.application.descriptor.basic.MPartDescriptor;
-import org.eclipse.e4.ui.model.application.ui.basic.MBasicFactory;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
 import org.eclipse.e4.ui.workbench.UIEvents;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
+import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.osgi.service.event.Event;
+import org.osgi.service.event.EventHandler;
 
 public class ViewStartupAddon {
 
   private final String PART_ID = "guicomponents.partdescriptor.part";
 
   @PostConstruct
-  void applicationStarted(
-      @Optional @UIEventTopic(UIEvents.UILifeCycle.APP_STARTUP_COMPLETE) Event event,
-      EModelService service,
-      MApplication application) {
+  private void applicationStarted(IEventBroker eb, EPartService partService, EModelService service) {
 
-	  MWindow mainWindow = application.getChildren().get(0);
-	  
-    MPartDescriptor viewDescriptor = service.getPartDescriptor(PART_ID);
-    MPart myView = service.createPart(viewDescriptor);
-    myView.setCloseable(true);
+    eb.subscribe(
+        UIEvents.UILifeCycle.APP_STARTUP_COMPLETE,
+        new EventHandler() {
 
-    MPartStack partStack = MBasicFactory.INSTANCE.createPartStack();
-    partStack.getChildren().add(myView);
-    
-    mainWindow.getChildren().add(partStack);
+          @Override
+          public void handleEvent(Event event) {
+            Object data = event.getProperty("org.eclipse.e4.data");
+
+            // Get application object
+            if (data instanceof MApplication) {
+              List<MWindow> childs = ((MApplication) data).getChildren();
+
+              if (childs.size() >= 1) {
+                // Create view
+                MPart myView = partService.createPart(PART_ID);
+                myView.setLabel("My View");
+                myView.setCloseable(true);
+
+                // Get main window and find its part stack children
+                MWindow mainWindow = childs.get(0);
+                List<MPartStack> stacks =
+                    service.findElements(mainWindow, null, MPartStack.class, null);
+
+                // Add view to the last part stack
+                int last = stacks.size() - 2;
+                MPartStack mPartStack = stacks.get(last);
+                mPartStack.getChildren().add(myView);
+                mPartStack.setSelectedElement(myView);
+              }
+            }
+            eb.unsubscribe(this);
+          }
+        });
   }
-  
-//  @PostConstruct
-//  void applicationStarted2(
-//		  @Optional @UIEventTopic(UIEvents.EventTags.ELEMENT) Event event,
-//		  EModelService service,
-//		  MApplication application) {
-//	  
-//	  MWindow mainWindow = application.getChildren().get(0);
-//	  
-//	  MPartDescriptor viewDescriptor = service.getPartDescriptor(PART_ID);
-//	  MPart myView = service.createPart(viewDescriptor);
-//	  myView.setCloseable(true);
-//	  
-//	  MPartStack partStack = MBasicFactory.INSTANCE.createPartStack();
-//	  partStack.getChildren().add(myView);
-//	  
-//	  mainWindow.getChildren().add(partStack);
-//  }
 }
